@@ -1,0 +1,25 @@
+{
+    "extensions": {
+        "authentication": {
+            "cookieSession": {
+            "secret": "abcd1234"
+            },
+            "admin": {
+            "username": "admin",
+            "password": "abcd1234"
+            },
+            "enabled": true
+        },
+        "scripts": {
+            "timeout": 80000,
+            "strategy": "http-server"
+        },
+        "sample-template": {
+            "createSamples": true
+        }
+    },
+    "allowLocalFilesAccess": true,
+    "store": {
+        "provider": "fs"
+    }
+}

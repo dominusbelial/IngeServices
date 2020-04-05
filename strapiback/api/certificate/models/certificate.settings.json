@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "certificates",
+  "info": {
+    "name": "certificate"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 300,
+      "minLength": 3
+    },
+    "cedula": {
+      "type": "string",
+      "required": true,
+      "maxLength": 300,
+      "minLength": 3
+    },
+    "company": {
+      "model": "company"
+    },
+    "legal_representative": {
+      "model": "legal-representative"
+    },
+    "teacher": {
+      "model": "teacher"
+    },
+    "course": {
+      "model": "course"
+    },
+    "date": {
+      "type": "date"
+    },
+    "city": {
+      "type": "string"
+    },
+    "deleted": {
+      "type": "date"
+    }
+  }
+}

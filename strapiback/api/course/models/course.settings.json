@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "courses",
+  "info": {
+    "name": "course"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 300,
+      "minLength": 3
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "teacher": {
+      "model": "teacher"
+    },
+    "legal_representative": {
+      "model": "legal-representative"
+    },
+    "deleted": {
+      "type": "date"
+    }
+  }
+}

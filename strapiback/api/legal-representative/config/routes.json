@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/legal-representatives",
+      "handler": "legal-representative.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/legal-representatives/count",
+      "handler": "legal-representative.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/legal-representatives/:id",
+      "handler": "legal-representative.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/legal-representatives",
+      "handler": "legal-representative.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/legal-representatives/:id",
+      "handler": "legal-representative.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/legal-representatives/:id",
+      "handler": "legal-representative.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

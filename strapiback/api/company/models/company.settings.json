@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "companies",
+  "info": {
+    "name": "company"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 300,
+      "minLength": 3
+    },
+    "deleted": {
+      "type": "date"
+    },
+    "legal_representative": {
+      "model": "legal-representative"
+    }
+  }
+}

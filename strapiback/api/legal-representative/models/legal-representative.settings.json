@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "legal_representatives",
+  "info": {
+    "name": "legalRepresentative"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 300,
+      "minLength": 3
+    },
+    "cedula": {
+      "type": "string",
+      "required": true,
+      "maxLength": 300,
+      "minLength": 3
+    },
+    "company": {
+      "model": "company"
+    },
+    "deleted": {
+      "type": "date"
+    }
+  }
+}

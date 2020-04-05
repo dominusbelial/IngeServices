@@ -1,0 +1,20 @@
+{
+    "shortid": "SylbDp_IvI",
+    "name": "main",
+    "recipe": "chrome-pdf",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "creationDate": {
+        "$$date": 1586036076057
+    },
+    "modificationDate": {
+        "$$date": 1586051526513
+    },
+    "_id": "qwP9LjBEZ770p1ms",
+    "$entitySet": "templates",
+    "data": {
+        "shortid": "rkeB34tUPU"
+    }
+}

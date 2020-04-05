@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <style>
+            {#asset styles/style.css @encoding=utf8}
+        </style>
+    </head>
+    <body> 
+        <section class="container">
+            <main class="main">
+                <header class="main-header">
+                    <div>
+                        <div class="main-header-banner">
+                            CERTIFICADO
+                        </div>
+                    </div>
+                </header>
+                <section class="main-content">
+                    <div class="main-content-barcode-container">
+                    </div>
+                    <div class="main-content-details">
+                        <div class="content-details-row">
+                            <div class="content-details-field">
+                                <span class="content-details-field-label">Certificado</span>
+                                <div class="content-details-field-value" style="padding-left: 15px">
+                                    {{name}}
+                                </div>
+                            </div>
+                            <div class="content-details-field" style="margin-left: 25px">
+                                <span class="content-details-field-label">Cedula</span>
+                                <div class="content-details-field-value">
+                                    {{cedula}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-details-row" style="justify-content: center;">
+                            curso:
+                            <div class="main-content-country-code">{{course.name}}</div>
+                            profesor:
+                            <div class="main-content-country-code">{{teacher.name}}</div>
+                        </div>
+                        <div class="content-details-row">
+                            <div class="content-details-field">
+                                <span class="content-details-field-label">Compania</span>
+                                <div class="content-details-field-value content-critical-text">
+                                    {{company.name}}
+                                </div>
+                            </div>
+                            <div class="content-details-field">
+                                <span class="content-details-field-label">Representante Legal</span>
+                                <div class="content-details-field-value content-critical-text">
+                                    {{legal_representative.name}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </section>
+        <script>
+            window.JSREPORT_READY_TO_START = true
+        </script>        
+    </body>
+</html>

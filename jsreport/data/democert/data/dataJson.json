@@ -1,0 +1,22 @@
+{
+    "id": "12",
+    "name": "test",
+    "created_at": "",
+    "updated_at": "",
+    "cedula": "123123123",
+    "company": {
+        "id": "1", "name": "Company 1"
+    },
+    "legal_representative": {
+        "id": "1", "name": "Juan Perez"
+    },
+    "teacher": {
+        "id": "1", "name": "Bill Gates"
+    },
+    "course": {
+        "id": "1", "name": "How to be great at anything"
+    },
+    "date": "123",
+    "city": "Neiva",
+    "deleted": ""
+}

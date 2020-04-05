@@ -1,0 +1,30 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "bookshelf",
+      "settings": {
+        "client": "mysql",
+        "host": "${process.env.DATABASE_HOST || '127.0.0.1'}",
+        "port": "${process.env.DATABASE_PORT || 3306}",
+        "database": "${process.env.DATABASE_NAME || 'IngeServices'}",
+        "username": "${process.env.DATABASE_USERNAME || 'backendUser'}",
+        "password": "${process.env.DATABASE_PASSWORD || 'abcd1234'}"
+      },
+      "options": {
+        "ssl": true,
+        "useNullAsDefault": true,
+        "acquireConnectionTimeout": 100000,
+        "pool": {
+          "min": 0,
+          "max": 20,
+          "createTimeoutMillis": 30000,
+          "acquireTimeoutMillis": 600000,
+          "idleTimeoutMillis": 20000,
+          "reapIntervalMillis": 20000,
+          "createRetryIntervalMillis": 200
+        }
+      }
+    }
+  }
+}

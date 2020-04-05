@@ -1,0 +1,90 @@
+# IngeServices Microservices Example Solution.
+# Creator/Owner: Gustavo Poveda - 2020/1st Quarantine.
+# Requirements: Ubuntu 16lts or better, Docker, Docker-Compose.
+# -----------------------------------------------
+# --------------- Running Example ---------------
+# Step 1: clone repository from github --> git clone https://github.com/dominusbelial/pruebaBlueSoft.git
+# Step 2: bash/terminal cd to downloaded repository.
+# Step 3: execute in term ---> $ docker-compose up --build 
+# ---------------- build process may take a few minutes --------------- 
+# wait for the following message ---> READY  Server listening on http://0.0.0.0:3002
+# Step 4: browse to http://127.0.0.1/ user:user password:abcd1234
+
+# Notes: if your user is not part of docker group, you need to prepend "sudo" to all bash commands.
+# Notes: nuxtfront access with user:user password:abcd1234
+# Notes: strapiback ports 1337 for backend configuration, user: admin pass: abcd1234
+# Notes: jsreport ports 5488 for backend configuration, user: admin pass: abcd1234
+# Notes: example website only works on docker host/nginx locahost/127.0.0.1 at port 80/433.
+# Notes: accept the localhost sample certificate to browse the crud/report demo example.
+
+version: '3.7'
+services:
+
+  nginxfront:
+    build: "./nginxfront"
+    ports:
+      - "80:80"
+      - "443:443"    
+    hostname: nginxfront    
+    init: true
+    restart: always
+
+  strapiback:
+    build: "./strapiback"
+    # ports:
+    #   - "1337:1337"
+    init: true   
+    hostname: strapiback
+    restart: always
+    environment:
+      DATABASE_HOST: mysqldb
+      DATABASE_PORT: 3306
+      DATABASE_NAME: IngeServices
+      DATABASE_USERNAME: backendUser
+      DATABASE_PASSWORD: abcd1234
+    depends_on:
+      - mysqldb      
+
+  nuxtfront:
+    build: "./nuxtfront"
+    # ports:
+    #   - "3002:3002"
+    init: true   
+    hostname: nuxtfront
+    restart: always
+    depends_on:
+      - strapiback
+
+  jsreport:   
+    build: "./jsreport"
+    # ports:
+    #   - "5488:5488"     
+    init: true   
+    hostname: jsreport
+    restart: always
+    volumes:
+      - ./jsreport/data:/home/node/app/data
+    depends_on:
+      - strapiback    
+
+  mysqldb:
+    build: "./mysqldb"
+    # ports:
+    #   - "3306:3306" 
+    #   - "33060:33060"    
+    command: --default-authentication-plugin=mysql_native_password
+    init: true   
+    hostname: mysqldb
+    restart: always    
+    environment:
+      MYSQL_INITDB_SKIP_TZINFO: 1
+      MYSQL_ROOT_PASSWORD: abcd1234
+      MYSQL_DATABASE: IngeServices
+      MYSQL_USER: backendUser
+      MYSQL_PASSWORD: abcd1234
+    volumes:
+     - ${PWD}/IngeServicesDataFile:/var/lib/mysql
+
+volumes:
+  IngeServicesDataFile:
+    driver: local
