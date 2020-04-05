@@ -18,6 +18,7 @@
         >
                     <!-- To enable server-side search to work don't pass the search prop to v-data-table -->
                     <v-container grid-list-md text-xs-center>
+                    <v-subheader>Positions</v-subheader>
                     <v-layout row wrap>
                     <v-flex xs4>
                         <v-text-field

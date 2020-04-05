@@ -1,21 +1,30 @@
-# IngeServices Microservices Example Solution.
-# Creator/Owner: Gustavo Poveda - 2020/1st Quarantine.
-# Requirements: Ubuntu 16lts or better, Docker, Docker-Compose.
-# -----------------------------------------------
-# --------------- Running Example ---------------
-# Step 1: clone repository from github --> git clone https://github.com/dominusbelial/pruebaBlueSoft.git
-# Step 2: bash/terminal cd to downloaded repository.
-# Step 3: execute in term ---> $ docker-compose up --build 
-# ---------------- build process may take a few minutes --------------- 
-# wait for the following message ---> READY  Server listening on http://0.0.0.0:3002
-# Step 4: browse to http://127.0.0.1/ user:user password:abcd1234
+### IngeServices Microservices Architecture Example.
+### Creator/Owner: Gustavo Poveda - 2020/1st Quarantine.
+### Requirements: Ubuntu 16lts or better, Docker, Docker-Compose.
 
-# Notes: if your user is not part of docker group, you need to prepend "sudo" to all bash commands.
-# Notes: nuxtfront access with user:user password:abcd1234
-# Notes: strapiback ports 1337 for backend configuration, user: admin pass: abcd1234
-# Notes: jsreport ports 5488 for backend configuration, user: admin pass: abcd1234
-# Notes: example website only works on docker host/nginx locahost/127.0.0.1 at port 80/433.
-# Notes: accept the localhost sample certificate to browse the crud/report demo example.
+### Getting Started
+
+# Clone repository from GitHub --> git clone https://github.com/dominusbelial/IngeServices.git
+
+### Prerequisites
+
+# Host: Ubuntu 16lts Desktop/Server or better with Docker, Docker-Compose tools.
+
+### Installing
+# 1. bash/terminal cd to downloaded repository, execute the following command.
+
+# $ docker-compose up --build 
+
+# 2. wait for the following message on console ---> READY  Server listening on http://0.0.0.0:3002
+# 3. browse to http://127.0.0.1/ user:user password:abcd1234
+
+### Notes
+# * if your user is not part of docker group, you need to prepend "sudo" to all bash commands.
+# * nuxtfront access with user:user password:abcd1234
+# * strapiback ports 1337 for backend configuration, user: admin pass: abcd1234
+# * jsreport ports 5488 for backend configuration, user: admin pass: abcd1234
+# * example website only works on docker host/nginx locahost/127.0.0.1 at port 80/433.
+# * accept the localhost sample certificate to browse the crud/report demo example.
 
 version: '3.7'
 services:
@@ -52,6 +61,8 @@ services:
     init: true   
     hostname: nuxtfront
     restart: always
+    volumes:
+      - './nuxtfront:/home/node/app'    
     depends_on:
       - strapiback
 
