@@ -158,6 +158,7 @@ export default {
         { title: 'JsReport', text:'is a reporting server which lets developers define reports using javascript templating engines.', src: 'https://jsreport.net/img/js-logo.png', flex: 3 },
         { title: 'MySql', text:'is an open-source relational database management system.', src: 'https://www.mysql.com/common/logos/logo-mysql-170x115.png', flex: 3 },
         { title: 'Nginx', text:'used as a reverse proxy, load balancer, https handling and securing access to resource on the vitual network', src: 'https://www.nginx.com/wp-content/uploads/2019/10/NGINX-Logo-White-Endorsement-RGB.svg', flex: 3 },
+        { title: 'GraphQl', text:'', src: 'https://graphql.org/img/logo.svg', flex: 3 },
         { title: 'Docker', text:'is a set of platform as a service products that uses OS-level virtualization to deliver software in packages called containers.', src: 'https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png', flex: 3 },
         { title: 'Docker-Compose', text:'is a tool for defining and running multi-container Docker applications, providing basic orchestation.', src: 'https://raw.githubusercontent.com/docker/compose/master/logo.png', flex: 3 },
         { title: '', text:'fully open source stack', src: 'https://opensource.org/files/osi_reversing_logotype_color_to_white_1.png', flex: 3 },
