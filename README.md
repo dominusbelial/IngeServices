@@ -40,4 +40,5 @@ Relational Database supported by Strapi.
 #### Nginx Features in this example:
 Reverse proxy, SSL, securing access to cluster.
 
-
+### Architecture Diagram
+![Screenshot](IngeServicesDiag.png)
