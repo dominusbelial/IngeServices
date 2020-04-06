@@ -93,8 +93,7 @@
                     Features in Demo.<br>
                   </div>                
                   <p>Reverse proxy, SSL, securing access to cluster.</p>
-                </v-card-text>                                   
-    
+                </v-card-text>    
                 <v-card-actions>
                   <v-spacer></v-spacer>
     
@@ -113,8 +112,15 @@
               </v-card>
             </v-col>
           </v-row>
-        </v-container>        
-
+        </v-container>  
+        <v-subheader><b>Architecture Diagram</b></v-subheader>      
+        <v-card-text>
+            <v-img contain
+              src="/IngeServicesDiag.png"
+              class="white--text align-end"
+            >
+            </v-img> 
+        </v-card-text>        
         <v-card-text>
           <p><b>CV</b> now how about some information about the creator?
           </p>
