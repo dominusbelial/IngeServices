@@ -40,8 +40,6 @@ services:
 
   strapiback:
     build: "./strapiback"
-    # ports:
-    #   - "1337:1337"
     init: true   
     hostname: strapiback
     restart: always
@@ -56,33 +54,22 @@ services:
 
   nuxtfront:
     build: "./nuxtfront"
-    # ports:
-    #   - "3002:3002"
     init: true   
     hostname: nuxtfront
     restart: always
-    volumes:
-      - './nuxtfront:/home/node/app'    
     depends_on:
       - strapiback
 
   jsreport:   
-    build: "./jsreport"
-    # ports:
-    #   - "5488:5488"     
+    build: "./jsreport"  
     init: true   
     hostname: jsreport
     restart: always
-    volumes:
-      - ./jsreport/data:/home/node/app/data
     depends_on:
       - strapiback    
 
   mysqldb:
-    build: "./mysqldb"
-    # ports:
-    #   - "3306:3306" 
-    #   - "33060:33060"    
+    build: "./mysqldb"    
     command: --default-authentication-plugin=mysql_native_password
     init: true   
     hostname: mysqldb
